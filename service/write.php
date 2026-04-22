@@ -6,7 +6,7 @@ This source code is protected by copyright law and international treaties. This 
 
 **************************************************************************/
 
-
+file_put_contents('../results/debug_write.txt', 'write.php was called at ' . date('Y-m-d H:i:s') . "\n", FILE_APPEND);
 
 function sanitize($string = '', $is_filename = FALSE)
 {
