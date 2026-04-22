@@ -1,7 +1,7 @@
 bufferSize: 4096
 testId: acappella_av_sep_test
 testname: Acappella Audio-Visual Source Separation Test
-remoteService: https://formspree.io/f/movnrpqv
+remoteService: service/write.php
 showButtonPreviousPage: true
 stopOnErrors: true
 
