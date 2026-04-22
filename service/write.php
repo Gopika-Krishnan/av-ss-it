@@ -483,7 +483,7 @@ if ($write_spatial_lev) {
 }
 
 // Send results to Google Sheets
-$googleScriptUrl = 'https://docs.google.com/spreadsheets/d/1zS6gSQlwcgnx5FcejLRkcJXbcoy_5mZJ8HGb9oH9Dp8/edit?gid=0#gid=0';
+$googleScriptUrl = 'https://script.google.com/macros/s/AKfycbwSAn8Pp44J37mR4k-i7Vb05EZ3gO5Ko4NR-7En2_1C5oidjH80Z4rEgp_oC2XSTNj3ew/exec';
 
 foreach ($session->trials as $trial) {
     foreach ($trial->responses as $response) {
