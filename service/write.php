@@ -482,5 +482,26 @@ if ($write_spatial_lev) {
 
 }
 
+// Send results to Google Sheets
+$googleScriptUrl = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+
+foreach ($session->trials as $trial) {
+    foreach ($trial->responses as $response) {
+        $payload = json_encode([
+            'testId' => $session->testId,
+            'participantName' => $session->participant->response[0] ?? 'unknown',
+            'trialId' => $trial->id,
+            'stimulus' => $response->stimulus ?? '',
+            'score' => $response->score ?? $response->stimulusRating ?? ''
+        ]);
+
+        $ch = curl_init($googleScriptUrl);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_exec($ch);
+        curl_close($ch);
+    }
+}
 
 ?>
