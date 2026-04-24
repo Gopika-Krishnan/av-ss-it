@@ -505,10 +505,17 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 curl_setopt($ch, CURLOPT_POST, true);
-curl_exec($ch);
+
+// 1. Capture the result properly
+$result = curl_exec($ch);
+
+// 2. Capture the HTTP code and errors properly
+$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$error = curl_error($ch);
+
 curl_close($ch);
-		file_put_contents('../results/debug.txt', "Code: $httpcode | Result: $result | Error: $error\n", FILE_APPEND);
-    }
-}
+
+// 3. Write to the debug log (Notice there are no stray brackets after this!)
+file_put_contents('../results/debug.txt', "Code: $httpcode | Result: $result | Error: $error\n", FILE_APPEND);
 
 ?>
