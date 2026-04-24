@@ -13,9 +13,9 @@ pages:
     1. <b>Phase 1: Vocal Quality:</b> Rate the naturalness of the voice (Distortion). 
     2. <b>Phase 2: Vocal Isolation:</b> Rate the separation from background voices (Intrusion).
     <br><br>
-    <b>Note:</b> A <b>Ground Truth</b> audio player is provided at the top of each page. Use this to hear the actual, clean target signal before rating the separated models.
+    <b>Note:</b> A <b>Ground Truth (Clean Target)</b> audio player is provided on each page. Use this to hear the actual, clean target signal before rating the separated models against it.
     <br><br>
-    The input mixture is provided as a reference. There are 5 samples per phase.
+    The input mixture is also provided as a reference. There are 5 samples per phase.
   id: instructions
   name: Instructions
   type: generic
@@ -24,7 +24,7 @@ pages:
 # PHASE 1: VOCAL QUALITY (SAMPLES 1-5)
 # ==========================================
 
-- content: '<b>Ground Truth:</b><br><audio controls src="configs/resources/audio/acapella/sample1/target_gt.wav"></audio><br><br>Attending <b>ONLY</b> to the singing voice signal, rate the <b>Vocal Quality</b> for Sample 1:<br><audio controls src="configs/resources/audio/acapella/sample1/mixture.wav"></audio>'
+- content: 'Attending <b>ONLY</b> to the singing voice signal, rate the <b>Vocal Quality</b> for Sample 1:<br><br><b>Input Mixture:</b><br><audio controls src="configs/resources/audio/acapella/sample1/mixture.wav"></audio><br><br><b>Ground Truth (Clean Target):</b><br><audio controls src="configs/resources/audio/acapella/sample1/target_gt.wav"></audio>'
   id: quality_sample_1
   mustRate: true
   name: Quality - Sample 1
@@ -62,7 +62,7 @@ pages:
     M4: configs/resources/audio/acapella/sample1/mamba_first_sep.wav
   type: likert_multi_stimulus
 
-- content: '<b>Ground Truth:</b><br><audio controls src="configs/resources/audio/acapella/sample2/target_gt.wav"></audio><br><br>Attending <b>ONLY</b> to the singing voice signal, rate the <b>Vocal Quality</b> for Sample 2:<br><audio controls src="configs/resources/audio/acapella/sample2/mixture.wav"></audio>'
+- content: 'Attending <b>ONLY</b> to the singing voice signal, rate the <b>Vocal Quality</b> for Sample 2:<br><br><b>Input Mixture:</b><br><audio controls src="configs/resources/audio/acapella/sample2/mixture.wav"></audio><br><br><b>Ground Truth (Clean Target):</b><br><audio controls src="configs/resources/audio/acapella/sample2/target_gt.wav"></audio>'
   id: quality_sample_2
   mustRate: true
   name: Quality - Sample 2
@@ -75,7 +75,7 @@ pages:
     M4: configs/resources/audio/acapella/sample2/mamba_first_sep.wav
   type: likert_multi_stimulus
 
-- content: '<b>Ground Truth:</b><br><audio controls src="configs/resources/audio/acapella/sample3/target_gt.wav"></audio><br><br>Attending <b>ONLY</b> to the singing voice signal, rate the <b>Vocal Quality</b> for Sample 3:<br><audio controls src="configs/resources/audio/acapella/sample3/mixture.wav"></audio>'
+- content: 'Attending <b>ONLY</b> to the singing voice signal, rate the <b>Vocal Quality</b> for Sample 3:<br><br><b>Input Mixture:</b><br><audio controls src="configs/resources/audio/acapella/sample3/mixture.wav"></audio><br><br><b>Ground Truth (Clean Target):</b><br><audio controls src="configs/resources/audio/acapella/sample3/target_gt.wav"></audio>'
   id: quality_sample_3
   mustRate: true
   name: Quality - Sample 3
@@ -88,7 +88,7 @@ pages:
     M4: configs/resources/audio/acapella/sample3/mamba_first_sep.wav
   type: likert_multi_stimulus
 
-- content: '<b>Ground Truth:</b><br><audio controls src="configs/resources/audio/acapella/sample4/target_gt.wav"></audio><br><br>Attending <b>ONLY</b> to the singing voice signal, rate the <b>Vocal Quality</b> for Sample 4:<br><audio controls src="configs/resources/audio/acapella/sample4/mixture.wav"></audio>'
+- content: 'Attending <b>ONLY</b> to the singing voice signal, rate the <b>Vocal Quality</b> for Sample 4:<br><br><b>Input Mixture:</b><br><audio controls src="configs/resources/audio/acapella/sample4/mixture.wav"></audio><br><br><b>Ground Truth (Clean Target):</b><br><audio controls src="configs/resources/audio/acapella/sample4/target_gt.wav"></audio>'
   id: quality_sample_4
   mustRate: true
   name: Quality - Sample 4
@@ -101,7 +101,7 @@ pages:
     M4: configs/resources/audio/acapella/sample4/mamba_first_sep.wav
   type: likert_multi_stimulus
 
-- content: '<b>Ground Truth:</b><br><audio controls src="configs/resources/audio/acapella/sample5/target_gt.wav"></audio><br><br>Attending <b>ONLY</b> to the singing voice signal, rate the <b>Vocal Quality</b> for Sample 5:<br><audio controls src="configs/resources/audio/acapella/sample5/mixture.wav"></audio>'
+- content: 'Attending <b>ONLY</b> to the singing voice signal, rate the <b>Vocal Quality</b> for Sample 5:<br><br><b>Input Mixture:</b><br><audio controls src="configs/resources/audio/acapella/sample5/mixture.wav"></audio><br><br><b>Ground Truth (Clean Target):</b><br><audio controls src="configs/resources/audio/acapella/sample5/target_gt.wav"></audio>'
   id: quality_sample_5
   mustRate: true
   name: Quality - Sample 5
@@ -131,7 +131,7 @@ pages:
 # PHASE 2: VOCAL ISOLATION (SAMPLES 1-5)
 # ==========================================
 
-- content: '<b>Ground Truth:</b><br><audio controls src="configs/resources/audio/acapella/sample1/target_gt.wav"></audio><br><br>Attending <b>ONLY</b> to the accompaniment, rate the <b>Vocal Isolation</b> for Sample 1:<br><audio controls src="configs/resources/audio/acapella/sample1/mixture.wav"></audio>'
+- content: 'Attending <b>ONLY</b> to the accompaniment, rate the <b>Vocal Isolation</b> for Sample 1:<br><br><b>Input Mixture:</b><br><audio controls src="configs/resources/audio/acapella/sample1/mixture.wav"></audio><br><br><b>Ground Truth (Clean Target):</b><br><audio controls src="configs/resources/audio/acapella/sample1/target_gt.wav"></audio>'
   id: isolation_sample_1
   mustRate: true
   name: Isolation - Sample 1
@@ -169,7 +169,7 @@ pages:
     M4: configs/resources/audio/acapella/sample1/mamba_first_sep.wav
   type: likert_multi_stimulus
 
-- content: '<b>Ground Truth:</b><br><audio controls src="configs/resources/audio/acapella/sample2/target_gt.wav"></audio><br><br>Attending <b>ONLY</b> to the accompaniment, rate the <b>Vocal Isolation</b> for Sample 2:<br><audio controls src="configs/resources/audio/acapella/sample2/mixture.wav"></audio>'
+- content: 'Attending <b>ONLY</b> to the accompaniment, rate the <b>Vocal Isolation</b> for Sample 2:<br><br><b>Input Mixture:</b><br><audio controls src="configs/resources/audio/acapella/sample2/mixture.wav"></audio><br><br><b>Ground Truth (Clean Target):</b><br><audio controls src="configs/resources/audio/acapella/sample2/target_gt.wav"></audio>'
   id: isolation_sample_2
   mustRate: true
   name: Isolation - Sample 2
@@ -182,7 +182,7 @@ pages:
     M4: configs/resources/audio/acapella/sample2/mamba_first_sep.wav
   type: likert_multi_stimulus
 
-- content: '<b>Ground Truth:</b><br><audio controls src="configs/resources/audio/acapella/sample3/target_gt.wav"></audio><br><br>Attending <b>ONLY</b> to the accompaniment, rate the <b>Vocal Isolation</b> for Sample 3:<br><audio controls src="configs/resources/audio/acapella/sample3/mixture.wav"></audio>'
+- content: 'Attending <b>ONLY</b> to the accompaniment, rate the <b>Vocal Isolation</b> for Sample 3:<br><br><b>Input Mixture:</b><br><audio controls src="configs/resources/audio/acapella/sample3/mixture.wav"></audio><br><br><b>Ground Truth (Clean Target):</b><br><audio controls src="configs/resources/audio/acapella/sample3/target_gt.wav"></audio>'
   id: isolation_sample_3
   mustRate: true
   name: Isolation - Sample 3
@@ -195,7 +195,7 @@ pages:
     M4: configs/resources/audio/acapella/sample3/mamba_first_sep.wav
   type: likert_multi_stimulus
 
-- content: '<b>Ground Truth:</b><br><audio controls src="configs/resources/audio/acapella/sample4/target_gt.wav"></audio><br><br>Attending <b>ONLY</b> to the accompaniment, rate the <b>Vocal Isolation</b> for Sample 4:<br><audio controls src="configs/resources/audio/acapella/sample4/mixture.wav"></audio>'
+- content: 'Attending <b>ONLY</b> to the accompaniment, rate the <b>Vocal Isolation</b> for Sample 4:<br><br><b>Input Mixture:</b><br><audio controls src="configs/resources/audio/acapella/sample4/mixture.wav"></audio><br><br><b>Ground Truth (Clean Target):</b><br><audio controls src="configs/resources/audio/acapella/sample4/target_gt.wav"></audio>'
   id: isolation_sample_4
   mustRate: true
   name: Isolation - Sample 4
@@ -208,7 +208,7 @@ pages:
     M4: configs/resources/audio/acapella/sample4/mamba_first_sep.wav
   type: likert_multi_stimulus
 
-- content: '<b>Ground Truth:</b><br><audio controls src="configs/resources/audio/acapella/sample5/target_gt.wav"></audio><br><br>Attending <b>ONLY</b> to the accompaniment, rate the <b>Vocal Isolation</b> for Sample 5:<br><audio controls src="configs/resources/audio/acapella/sample5/mixture.wav"></audio>'
+- content: 'Attending <b>ONLY</b> to the accompaniment, rate the <b>Vocal Isolation</b> for Sample 5:<br><br><b>Input Mixture:</b><br><audio controls src="configs/resources/audio/acapella/sample5/mixture.wav"></audio><br><br><b>Ground Truth (Clean Target):</b><br><audio controls src="configs/resources/audio/acapella/sample5/target_gt.wav"></audio>'
   id: isolation_sample_5
   mustRate: true
   name: Isolation - Sample 5
