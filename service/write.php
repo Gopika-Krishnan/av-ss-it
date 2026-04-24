@@ -482,29 +482,31 @@ if ($write_spatial_lev) {
 
 }
 
-// Send results to Google Sheets
+// Send ALL results to Google Sheets in one request
 $googleScriptUrl = 'https://script.google.com/macros/s/AKfycbyXBO670Z47uImAY14-9fcSHDbBcFSTmeh5bphKzEm6nfkLY8jZAVgfks45H0oRsa0Elw/exec';
 
+$allRows = [];
 foreach ($session->trials as $trial) {
     foreach ($trial->responses as $response) {
-        $payload = json_encode([
+        $allRows[] = [
             'testId' => $session->testId,
             'participantName' => $session->participant->response[0] ?? 'unknown',
             'trialId' => $trial->id,
             'stimulus' => $response->stimulus ?? '',
             'score' => $response->score ?? $response->stimulusRating ?? ''
-        ]);
+        ];
+    }
+}
 
-        $ch = curl_init($googleScriptUrl);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($ch, CURLOPT_POST, true);
-		$result = curl_exec($ch);
-		$error = curl_error($ch);
-		$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-		curl_close($ch);
+$payload = json_encode(['rows' => $allRows]);
+$ch = curl_init($googleScriptUrl);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_exec($ch);
+curl_close($ch);
 		file_put_contents('../results/debug.txt', "Code: $httpcode | Result: $result | Error: $error\n", FILE_APPEND);
     }
 }
