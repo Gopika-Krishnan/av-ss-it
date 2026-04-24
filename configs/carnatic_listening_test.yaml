@@ -9,13 +9,15 @@ pages:
 - content: |
     <br><b>Acappella Audio-Visual Source Separation Test</b>
     <br><br>
-    This test is divided into two phases:
+    This test consists of 5 samples per phase, divided into two phases:
     1. <b>Phase 1: Vocal Quality:</b> Rate the naturalness of the voice (Distortion). 
     2. <b>Phase 2: Vocal Isolation:</b> Rate the separation from background voices (Intrusion).
     <br><br>
-    <b>Note:</b> A <b>Ground Truth (Clean Target)</b> audio player is provided on each page. Use this to hear the actual, clean target signal before rating the separated models against it.
-    <br><br>
-    The input mixture is also provided as a reference. There are 5 samples per phase.
+    <b>Note on Reference Audio:</b> On each page, you will be provided with two reference players before you rate the models:
+    <ul>
+      <li><b>Input Mixture:</b> Listen to this first to hear the original, unseparated audio.</li>
+      <li><b>Ground Truth (Clean Target):</b> Listen to this next to hear the actual, clean target signal.</li>
+    </ul>
   id: instructions
   name: Instructions
   type: generic
